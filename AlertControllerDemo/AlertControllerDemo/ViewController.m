@@ -22,8 +22,8 @@
 
 #pragma mark - Actions
 
-- (IBAction)likeSystemButtonPressed:(id)sender {
-    CYAlertController *alertController = [CYAlertController alertControllerWithTitle:@"快给我们一个爱的鼓励吧" message:nil];
+- (IBAction)alertButtonPressed:(id)sender {
+    CYAlertController *alertController = [CYAlertController alertControllerWithTitle:@"快给我们一个爱的鼓励吧" message:nil  preferredStyle:CYAlertControllerStyleAlert];
     // Create the actions.
     CYAlertAction *encourageAction = [CYAlertAction actionWithTitle:@"必须鼓励"  bold:YES handler:^(CYAlertAction *action) {
         NSLog(@"必须鼓励");
@@ -37,7 +37,21 @@
     [alertController addAction:encourageAction];
     [alertController addAction:ruthlessAction];
     [alertController addAction:nextRemindAction];
-    [alertController presentFromViewController:self animated:YES completion:nil];
+    [alertController presentFromViewController:self animated:YES];
+}
+
+- (IBAction)systemAlertButtonPressed:(id)sender {
+    CYAlertController *alertController = [CYAlertController alertControllerWithTitle:@"快给我们一个爱的鼓励吧" message:nil preferredStyle:CYAlertControllerStyleSystemAlert];
+    // Create the actions.
+    CYAlertAction *encourageAction = [CYAlertAction actionWithTitle:@"必须鼓励"  bold:YES handler:^(CYAlertAction *action) {
+        NSLog(@"必须鼓励");
+    }];
+    CYAlertAction *ruthlessAction = [CYAlertAction actionWithTitle:@"残忍拒绝" handler:^(CYAlertAction *action) {
+        NSLog(@"残忍拒绝");
+    }];
+    [alertController addAction:encourageAction];
+    [alertController addAction:ruthlessAction];
+    [alertController presentFromViewController:self animated:YES];
 }
 
 - (IBAction)custemAlertButtonPressed:(id)sender {
@@ -48,14 +62,28 @@
     frame.size.width = 260.0;
     pickerView.frame = frame;
     pickerView.layer.cornerRadius = 5.0;
-    [pickerView showFromViewController:self preferredStyle:CYAlertControllerStyleCustomAlert animated:YES completion:NULL];
+    [pickerView showFromViewController:self preferredStyle:CYAlertControllerStyleCustomAlert animated:YES];
 }
 
 - (IBAction)custemActionSheetButtonPressed:(id)sender {
     DatePickerView *pickerView = [DatePickerView datePickerViewWithMode:DatePickerViewModeDate selectedDate:nil completion:^(NSDate *date) {
         NSLog(@"select date: %@", date);
     }];
-    [pickerView showFromViewController:self preferredStyle:CYAlertControllerStyleCustomActionSheet animated:YES completion:NULL];
+    [pickerView showFromViewController:self preferredStyle:CYAlertControllerStyleCustomActionSheet animated:YES];
+}
+
+- (IBAction)systemActionSheetButtonPressed:(id)sender {
+    CYAlertController *alertController = [CYAlertController alertControllerWithTitle:@"快给我们一个爱的鼓励吧" message:nil preferredStyle:CYAlertControllerStyleSystemActionSheet];
+    // Create the actions.
+    CYAlertAction *encourageAction = [CYAlertAction actionWithTitle:@"必须鼓励"  bold:YES handler:^(CYAlertAction *action) {
+        NSLog(@"必须鼓励");
+    }];
+    CYAlertAction *ruthlessAction = [CYAlertAction actionWithTitle:@"残忍拒绝" handler:^(CYAlertAction *action) {
+        NSLog(@"残忍拒绝");
+    }];
+    [alertController addAction:encourageAction];
+    [alertController addAction:ruthlessAction];
+    [alertController presentFromViewController:self animated:YES];
 }
 
 @end

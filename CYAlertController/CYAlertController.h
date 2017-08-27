@@ -24,7 +24,9 @@
 typedef NS_ENUM(NSInteger, CYAlertControllerStyle) {
     CYAlertControllerStyleAlert = 0,
     CYAlertControllerStyleCustomAlert,
-    CYAlertControllerStyleCustomActionSheet
+    CYAlertControllerStyleCustomActionSheet,
+    CYAlertControllerStyleSystemAlert,
+    CYAlertControllerStyleSystemActionSheet,
 };
 
 @class CYAlertController;
@@ -43,13 +45,11 @@ typedef NS_ENUM(NSInteger, CYAlertControllerStyle) {
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
-                                     animated:(BOOL)animated
-                                   completion:(void (^)(void))completion;
+                                     animated:(BOOL)animated;
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
                                      animated:(BOOL)animated
-                                    maskColor:(UIColor *)maskColor
-                                   completion:(void (^)(void))completion;
+                                    maskColor:(UIColor *)maskColor;
 - (void)hide:(BOOL)animated;
 
 @end
@@ -60,13 +60,14 @@ typedef NS_ENUM(NSInteger, CYAlertControllerStyle) {
 + (instancetype)actionWithTitle:(NSString *)title bold:(BOOL)bold handler:(void (^)(CYAlertAction *action))handler;
 
 @property (nonatomic, readonly) NSString *title;
+@property (nonatomic, assign) UIAlertActionStyle style;
 
 @end
 
 @interface CYAlertController : UIViewController
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message;
-+ (instancetype)alertControllerWithImage:(UIImage *)image message:(NSString *)message;
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(CYAlertControllerStyle)preferredStyle;
++ (instancetype)alertControllerWithImage:(UIImage *)image message:(NSString *)message preferredStyle:(CYAlertControllerStyle)preferredStyle;
 + (instancetype)alertControllerWithCustomView:(CYAlertCustomView *)customView preferredStyle:(CYAlertControllerStyle)preferredStyle; // preferredStyle = CYAlertControllerStyleCustomAlert or CYAlertControllerStyleCustomActionSheet
 
 - (void)addAction:(CYAlertAction *)action;
@@ -82,7 +83,7 @@ typedef NS_ENUM(NSInteger, CYAlertControllerStyle) {
 @property (nonatomic, readonly) BOOL animated;
 @property (nonatomic, readonly) CYAlertControllerStyle preferredStyle;
 
-- (void)presentFromViewController:(UIViewController *)fromController animated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)presentFromViewController:(UIViewController *)fromController animated:(BOOL)animated;
 - (void)dismiss:(BOOL)animated;
 
 @end

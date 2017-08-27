@@ -21,6 +21,8 @@
 #define CYAlertViewButtonHeight         45.0f
 
 #define CYAlertViewTextColor [UIColor colorWithRed:63.0/255 green:63.0/255 blue:63.0/355 alpha:1.0]
+#define CYAlertViewButtonTitleColor [UIColor colorWithRed:22.0/255 green:162.0/255 blue:222.0/255 alpha:1.0]
+#define CYAlertViewSeperatorColor [UIColor colorWithRed:205.0/255 green:205.0/255 blue:205.0/255 alpha:1.0]
 
 static UIWindow *CYAlertWindow;
 
@@ -54,20 +56,18 @@ static UIWindow *CYAlertWindow;
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
-                                     animated:(BOOL)animated
-                                   completion:(void (^)(void))completion {
-    return [self showFromViewController:viewController preferredStyle:preferredStyle animated:animated maskColor:nil completion:completion];
+                                     animated:(BOOL)animated {
+    return [self showFromViewController:viewController preferredStyle:preferredStyle animated:animated maskColor:nil];
 }
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
                                      animated:(BOOL)animated
-                                    maskColor:(UIColor *)maskColor
-                                   completion:(void (^)(void))completion {
+                                    maskColor:(UIColor *)maskColor {
     CYAlertController *alertController = [CYAlertController alertControllerWithCustomView:self preferredStyle:preferredStyle];
     alertController.maskColor = maskColor;
     alertController.offsetCenterY = self.offsetCenterY;
-    [alertController presentFromViewController:viewController animated:animated completion:completion];
+    [alertController presentFromViewController:viewController animated:animated];
     self.alertController = alertController;
     
     return alertController;
@@ -83,7 +83,7 @@ static UIWindow *CYAlertWindow;
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL bold;
-@property (nonatomic, strong) void (^handler)(CYAlertAction *action);
+@property (nonatomic, copy) void (^handler)(CYAlertAction *action);
 
 @end
 
@@ -98,6 +98,26 @@ static UIWindow *CYAlertWindow;
     action.title = title;
     action.bold = bold;
     action.handler = handler;
+    action.style = UIAlertActionStyleDefault;
+    return action;
+}
+
+@end
+
+@interface UIAlertAction (CYAlertAction)
+
++ (instancetype)actionWithCYAlertAction:(CYAlertAction *)alertAction style:(UIAlertActionStyle)style;
+
+@end
+
+@implementation UIAlertAction (CYAlertAction)
+
++ (instancetype)actionWithCYAlertAction:(CYAlertAction *)alertAction style:(UIAlertActionStyle)style {
+    UIAlertAction *action = [UIAlertAction actionWithTitle:alertAction.title style:style handler:^(UIAlertAction * _Nonnull action) {
+        if (alertAction.handler != nil) {
+            alertAction.handler(alertAction);
+        }
+    }];
     return action;
 }
 
@@ -190,20 +210,20 @@ static UIWindow *CYAlertWindow;
 
 #pragma mark - Lifecycle
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message {
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(CYAlertControllerStyle)preferredStyle {
     CYAlertController *alertController = [[CYAlertController alloc] init];
     alertController.title = title;
     alertController.message = message;
-    alertController.preferredStyle = CYAlertControllerStyleAlert;
+    alertController.preferredStyle = preferredStyle;
     
     return alertController;
 }
 
-+ (instancetype)alertControllerWithImage:(UIImage *)image message:(NSString *)message {
++ (instancetype)alertControllerWithImage:(UIImage *)image message:(NSString *)message preferredStyle:(CYAlertControllerStyle)preferredStyle {
     CYAlertController *alertController = [[CYAlertController alloc] init];
     alertController.image = image;
     alertController.message = message;
-    alertController.preferredStyle = CYAlertControllerStyleAlert;
+    alertController.preferredStyle = preferredStyle;
     
     return alertController;
 }
@@ -233,7 +253,7 @@ static UIWindow *CYAlertWindow;
     self.view.backgroundColor = [UIColor clearColor];
     [self.view insertSubview:self.backgroundView atIndex:0];
     
-    if (self.preferredStyle != CYAlertControllerStyleAlert) {
+    if (!(self.preferredStyle == CYAlertControllerStyleAlert || self.preferredStyle == CYAlertControllerStyleSystemAlert)) {
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
         tapGesture.delegate = self;
         [self.view addGestureRecognizer:tapGesture];
@@ -241,6 +261,7 @@ static UIWindow *CYAlertWindow;
 }
 
 - (void)layoutContentView {
+    CGFloat offsetX = 0.0;
     CGFloat offsetY = 0.0;
     CGRect frame = CGRectZero;
     if (self.title != nil) {
@@ -272,8 +293,9 @@ static UIWindow *CYAlertWindow;
     offsetY += CYAlertViewTitleTopMargin;
     for (int i = 0; i < self.actions.count; i++) {
         CYAlertAction *action = self.actions[i];
+        
         UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0.0, offsetY, CYAlertViewWidth, 0.5)];
-        seperatorView.backgroundColor = [UIColor colorWithRed:205.0/255 green:205.0/255 blue:205.0/255 alpha:1.0];
+        seperatorView.backgroundColor = CYAlertViewSeperatorColor;
         [self.contentView addSubview:seperatorView];
         offsetY = CGRectGetMaxY(seperatorView.frame);
         
@@ -285,16 +307,45 @@ static UIWindow *CYAlertWindow;
             button.titleLabel.font = [UIFont systemFontOfSize:CYAlertViewTextFontSize];
         }
         [button setTitle:action.title forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithRed:22.0/255 green:162.0/255 blue:222.0/255 alpha:1.0] forState:UIControlStateNormal];
+        [button setTitleColor:CYAlertViewButtonTitleColor forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
-        frame = button.frame;
-        frame.origin.y = offsetY;
-        frame.size.height = CYAlertViewButtonHeight;
-        frame.size.width = CYAlertViewWidth;
-        button.frame = frame;
-        [self.contentView addSubview:button];
-        offsetY = CGRectGetMaxY(button.frame);
+        if (self.preferredStyle == CYAlertControllerStyleAlert || (self.preferredStyle == CYAlertControllerStyleSystemAlert && self.actions.count > 2)) {
+            if (i > 0) {
+                UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0.0, offsetY, CYAlertViewWidth, 0.5)];
+                seperatorView.backgroundColor = CYAlertViewSeperatorColor;
+                [self.contentView addSubview:seperatorView];
+                offsetY = CGRectGetMaxY(seperatorView.frame);
+            }
+            
+            frame = button.frame;
+            frame.origin.y = offsetY;
+            frame.size.height = CYAlertViewButtonHeight;
+            frame.size.width = CYAlertViewWidth;
+            button.frame = frame;
+            [self.contentView addSubview:button];
+            offsetY = CGRectGetMaxY(button.frame);
+        } else if (self.preferredStyle == CYAlertControllerStyleSystemAlert) {
+            if (i > 0) {
+                UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(offsetX, offsetY, 0.5, CYAlertViewButtonHeight)];
+                seperatorView.backgroundColor = CYAlertViewSeperatorColor;
+                [self.contentView addSubview:seperatorView];
+                offsetX = CGRectGetMaxX(seperatorView.frame);
+            }
+            
+            frame = button.frame;
+            frame.origin.x = offsetX;
+            frame.origin.y = offsetY;
+            frame.size.height = CYAlertViewButtonHeight;
+            frame.size.width = (CYAlertViewWidth - (0.5 * (self.actions.count - 1))) / self.actions.count;
+            button.frame = frame;
+            [self.contentView addSubview:button];
+            offsetX = CGRectGetMaxX(button.frame);
+            
+            if (i == self.actions.count - 1) {
+                offsetY = CGRectGetMaxY(button.frame);
+            }
+        }
     }
     
     frame = self.contentView.frame;
@@ -302,6 +353,19 @@ static UIWindow *CYAlertWindow;
     self.contentView.frame = frame;
     self.contentView.center = self.view.center;
     [self.view addSubview:self.contentView];
+}
+
+#pragma mark - Private Methods
+
+- (void)presentAlertControllerFromController:(UIViewController *)viewControlelr style:(UIAlertControllerStyle)style animated:(BOOL)animated {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:self.title message:self.message preferredStyle:style];
+    for (int i = 0; i < self.actions.count; i++) {
+        CYAlertAction *alertAction = self.actions[i];
+        UIAlertAction *action = [UIAlertAction actionWithCYAlertAction:alertAction style:alertAction.style];
+        [alertController addAction:action];
+    }
+    
+    [viewControlelr presentViewController:alertController animated:animated completion:NULL];
 }
 
 #pragma mark - Public Methods
@@ -314,8 +378,13 @@ static UIWindow *CYAlertWindow;
     self.actions = actions;
 }
 
-- (void)presentFromViewController:(UIViewController *)fromController animated:(BOOL)animated completion:(void (^)(void))completion {
+- (void)presentFromViewController:(UIViewController *)fromController animated:(BOOL)animated {
     NSAssert(fromController != nil, @"fromController can not be nil.");
+    
+    if (self.preferredStyle == CYAlertControllerStyleSystemActionSheet) {
+        [self presentAlertControllerFromController:fromController style:UIAlertControllerStyleActionSheet animated:animated];
+        return;
+    }
     
     if (CYAlertWindow == nil) {
         CYAlertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -327,7 +396,7 @@ static UIWindow *CYAlertWindow;
     self.animated = animated;
     CYAlertWindow.rootViewController = self;
     
-    if (self.preferredStyle == CYAlertControllerStyleAlert) {
+    if (self.preferredStyle == CYAlertControllerStyleAlert || self.preferredStyle == CYAlertControllerStyleSystemAlert) {
         [self layoutContentView];
     } else {
         NSAssert(self.customView != nil, @"customView can not be nil if preferredStyle is equal CYAlertControllerStyleCustomAlert or CYAlertControllerStyleCustomActionSheet");
@@ -362,9 +431,6 @@ static UIWindow *CYAlertWindow;
 //            [UIView animateWithDuration:animated ? CYAlertViewAnimationDuration / 3 : 0.0 animations:^{
 //                self.contentView.transform = CGAffineTransformIdentity;
 //            } completion:NULL];
-            if (completion != nil) {
-                completion();
-            }
         }];
     } else {
         self.backgroundView.alpha = 0.0;
@@ -373,11 +439,7 @@ static UIWindow *CYAlertWindow;
             CGRect frame = self.customView.frame;
             frame.origin.y = self.view.frame.size.height - frame.size.height;
             self.customView.frame = frame;
-        } completion:^(BOOL finished) {
-            if (completion != nil) {
-                completion();
-            }
-        }];
+        } completion:NULL];
     }
 }
 
@@ -393,6 +455,7 @@ static UIWindow *CYAlertWindow;
             self.backgroundView.alpha = 0.0;
             switch (self.preferredStyle) {
                 case CYAlertControllerStyleAlert:
+                case CYAlertControllerStyleSystemAlert:
                     self.contentView.alpha = 0.0;
                     break;
                 case CYAlertControllerStyleCustomAlert:
@@ -402,6 +465,9 @@ static UIWindow *CYAlertWindow;
                     CGRect frame = self.customView.frame;
                     frame.origin.y = self.view.frame.size.height;
                     self.customView.frame = frame;
+                    break;
+                    
+                default:
                     break;
                 }
             }

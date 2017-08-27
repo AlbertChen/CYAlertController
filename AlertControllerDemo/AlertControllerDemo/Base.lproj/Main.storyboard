@@ -36,20 +36,38 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx2-wk-CoQ">
-                                <rect key="frame" x="103" y="258.5" width="169" height="30"/>
-                                <state key="normal" title="Custom Alert Like Systm"/>
+                                <rect key="frame" x="171" y="198.5" width="33" height="30"/>
+                                <state key="normal" title="Alert"/>
                                 <connections>
-                                    <action selector="likeSystemButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pv7-s5-Rkq"/>
+                                    <action selector="alertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pv7-s5-Rkq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu4-PY-0Nz">
+                                <rect key="frame" x="143.5" y="258.5" width="88" height="30"/>
+                                <state key="normal" title="System Alert"/>
+                                <connections>
+                                    <action selector="systemAlertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51x-qt-WLt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykW-ib-WwH">
+                                <rect key="frame" x="119" y="438.5" width="137" height="30"/>
+                                <state key="normal" title="System Actionsheet"/>
+                                <connections>
+                                    <action selector="systemActionSheetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z8G-xt-Ngv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ykW-ib-WwH" firstAttribute="top" secondItem="0BX-ei-qns" secondAttribute="bottom" constant="30" id="4ps-2N-uno"/>
+                            <constraint firstItem="Eu4-PY-0Nz" firstAttribute="top" secondItem="bx2-wk-CoQ" secondAttribute="bottom" constant="30" id="8eh-kD-DcH"/>
+                            <constraint firstItem="ykW-ib-WwH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8j9-jf-Jtd"/>
                             <constraint firstItem="0BX-ei-qns" firstAttribute="top" secondItem="gYd-LB-uEl" secondAttribute="bottom" constant="30" id="F5U-xD-CTN"/>
-                            <constraint firstItem="gYd-LB-uEl" firstAttribute="top" secondItem="bx2-wk-CoQ" secondAttribute="bottom" constant="30" id="PAH-4H-293"/>
+                            <constraint firstItem="bx2-wk-CoQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ICl-hX-MVb"/>
+                            <constraint firstItem="Eu4-PY-0Nz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ROd-pb-nS9"/>
                             <constraint firstItem="0BX-ei-qns" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aJ0-js-wTb"/>
-                            <constraint firstItem="bx2-wk-CoQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f5A-3u-ntp"/>
                             <constraint firstItem="gYd-LB-uEl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fio-zl-Qpd"/>
+                            <constraint firstItem="gYd-LB-uEl" firstAttribute="top" secondItem="Eu4-PY-0Nz" secondAttribute="bottom" constant="30" id="i2S-Q1-ZIU"/>
                             <constraint firstItem="gYd-LB-uEl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xMF-t7-l85"/>
                         </constraints>
                     </view>
