@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "CYAlertController"
+  spec.name         = "CYAlertController/ObjC"
   spec.version      = "0.0.1"
   spec.summary      = "Alert Controller"
 
