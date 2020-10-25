@@ -7,37 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B9001F4EEBEE4F68BDE4C82 /* Pods_AlertControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097513E3B4ED4EBBBAD37D63 /* Pods_AlertControllerDemo.framework */; };
 		DE2EA9361EB33EAF00C76D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA9351EB33EAF00C76D7F /* main.m */; };
 		DE2EA9391EB33EAF00C76D7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA9381EB33EAF00C76D7F /* AppDelegate.m */; };
 		DE2EA93C1EB33EAF00C76D7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA93B1EB33EAF00C76D7F /* ViewController.m */; };
 		DE2EA93F1EB33EAF00C76D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2EA93D1EB33EAF00C76D7F /* Main.storyboard */; };
 		DE2EA9411EB33EAF00C76D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2EA9401EB33EAF00C76D7F /* Assets.xcassets */; };
 		DE2EA9441EB33EAF00C76D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2EA9421EB33EAF00C76D7F /* LaunchScreen.storyboard */; };
-		DE2EA94F1EB33EAF00C76D7F /* AlertControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA94E1EB33EAF00C76D7F /* AlertControllerDemoTests.m */; };
-		DE2EA95A1EB33EAF00C76D7F /* AlertControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA9591EB33EAF00C76D7F /* AlertControllerDemoUITests.m */; };
-		DE513EE81F13442500BE4CDE /* CYAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE513EE71F13442500BE4CDE /* CYAlertController.m */; };
 		DE59C7091F133CF300A58342 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE59C7071F133CF300A58342 /* DatePickerView.m */; };
 		DE59C70A1F133CF300A58342 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE59C7081F133CF300A58342 /* DatePickerView.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DE2EA94B1EB33EAF00C76D7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE2EA9291EB33EAF00C76D7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE2EA9301EB33EAF00C76D7F;
-			remoteInfo = AlertControllerDemo;
-		};
-		DE2EA9561EB33EAF00C76D7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE2EA9291EB33EAF00C76D7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE2EA9301EB33EAF00C76D7F;
-			remoteInfo = AlertControllerDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		097513E3B4ED4EBBBAD37D63 /* Pods_AlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67C9FA6F060C547E669A6676 /* Pods-AlertControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertControllerDemo.release.xcconfig"; path = "Target Support Files/Pods-AlertControllerDemo/Pods-AlertControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DE2EA9311EB33EAF00C76D7F /* AlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2EA9351EB33EAF00C76D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE2EA9371EB33EAF00C76D7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,17 +31,10 @@
 		DE2EA9401EB33EAF00C76D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE2EA9431EB33EAF00C76D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE2EA9451EB33EAF00C76D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE2EA94A1EB33EAF00C76D7F /* AlertControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE2EA94E1EB33EAF00C76D7F /* AlertControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertControllerDemoTests.m; sourceTree = "<group>"; };
-		DE2EA9501EB33EAF00C76D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE2EA9551EB33EAF00C76D7F /* AlertControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE2EA9591EB33EAF00C76D7F /* AlertControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertControllerDemoUITests.m; sourceTree = "<group>"; };
-		DE2EA95B1EB33EAF00C76D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE513EE61F13442500BE4CDE /* CYAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYAlertController.h; sourceTree = "<group>"; };
-		DE513EE71F13442500BE4CDE /* CYAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYAlertController.m; sourceTree = "<group>"; };
 		DE59C7061F133CF300A58342 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		DE59C7071F133CF300A58342 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		DE59C7081F133CF300A58342 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		F4875CA32B5D36BE7654D746 /* Pods-AlertControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertControllerDemo.debug.xcconfig"; path = "Target Support Files/Pods-AlertControllerDemo/Pods-AlertControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,33 +42,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2EA9471EB33EAF00C76D7F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2EA9521EB33EAF00C76D7F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9B9001F4EEBEE4F68BDE4C82 /* Pods_AlertControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2881F934A66081A11B38BA71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				097513E3B4ED4EBBBAD37D63 /* Pods_AlertControllerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE2EA9281EB33EAF00C76D7F = {
 			isa = PBXGroup;
 			children = (
 				DE2EA9331EB33EAF00C76D7F /* AlertControllerDemo */,
-				DE2EA94D1EB33EAF00C76D7F /* AlertControllerDemoTests */,
-				DE2EA9581EB33EAF00C76D7F /* AlertControllerDemoUITests */,
 				DE2EA9321EB33EAF00C76D7F /* Products */,
+				F3DD8C016BA6525B2B9C4A75 /* Pods */,
+				2881F934A66081A11B38BA71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				DE2EA9311EB33EAF00C76D7F /* AlertControllerDemo.app */,
-				DE2EA94A1EB33EAF00C76D7F /* AlertControllerDemoTests.xctest */,
-				DE2EA9551EB33EAF00C76D7F /* AlertControllerDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +78,6 @@
 		DE2EA9331EB33EAF00C76D7F /* AlertControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DE513EE51F13442500BE4CDE /* CYAlertController */,
 				DE59C7051F133CF300A58342 /* DatePickerView */,
 				DE2EA9371EB33EAF00C76D7F /* AppDelegate.h */,
 				DE2EA9381EB33EAF00C76D7F /* AppDelegate.m */,
@@ -132,34 +100,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DE2EA94D1EB33EAF00C76D7F /* AlertControllerDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE2EA94E1EB33EAF00C76D7F /* AlertControllerDemoTests.m */,
-				DE2EA9501EB33EAF00C76D7F /* Info.plist */,
-			);
-			path = AlertControllerDemoTests;
-			sourceTree = "<group>";
-		};
-		DE2EA9581EB33EAF00C76D7F /* AlertControllerDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE2EA9591EB33EAF00C76D7F /* AlertControllerDemoUITests.m */,
-				DE2EA95B1EB33EAF00C76D7F /* Info.plist */,
-			);
-			path = AlertControllerDemoUITests;
-			sourceTree = "<group>";
-		};
-		DE513EE51F13442500BE4CDE /* CYAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				DE513EE61F13442500BE4CDE /* CYAlertController.h */,
-				DE513EE71F13442500BE4CDE /* CYAlertController.m */,
-			);
-			name = CYAlertController;
-			path = ../../CYAlertController;
-			sourceTree = "<group>";
-		};
 		DE59C7051F133CF300A58342 /* DatePickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +110,15 @@
 			path = DatePickerView;
 			sourceTree = "<group>";
 		};
+		F3DD8C016BA6525B2B9C4A75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4875CA32B5D36BE7654D746 /* Pods-AlertControllerDemo.debug.xcconfig */,
+				67C9FA6F060C547E669A6676 /* Pods-AlertControllerDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE2EA95E1EB33EAF00C76D7F /* Build configuration list for PBXNativeTarget "AlertControllerDemo" */;
 			buildPhases = (
+				FC224A6F9DCCE026C655BC6F /* [CP] Check Pods Manifest.lock */,
 				DE2EA92D1EB33EAF00C76D7F /* Sources */,
 				DE2EA92E1EB33EAF00C76D7F /* Frameworks */,
 				DE2EA92F1EB33EAF00C76D7F /* Resources */,
+				547D122F86EFA88E93AB1FD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,42 +140,6 @@
 			productName = AlertControllerDemo;
 			productReference = DE2EA9311EB33EAF00C76D7F /* AlertControllerDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DE2EA9491EB33EAF00C76D7F /* AlertControllerDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE2EA9611EB33EAF00C76D7F /* Build configuration list for PBXNativeTarget "AlertControllerDemoTests" */;
-			buildPhases = (
-				DE2EA9461EB33EAF00C76D7F /* Sources */,
-				DE2EA9471EB33EAF00C76D7F /* Frameworks */,
-				DE2EA9481EB33EAF00C76D7F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE2EA94C1EB33EAF00C76D7F /* PBXTargetDependency */,
-			);
-			name = AlertControllerDemoTests;
-			productName = AlertControllerDemoTests;
-			productReference = DE2EA94A1EB33EAF00C76D7F /* AlertControllerDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DE2EA9541EB33EAF00C76D7F /* AlertControllerDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE2EA9641EB33EAF00C76D7F /* Build configuration list for PBXNativeTarget "AlertControllerDemoUITests" */;
-			buildPhases = (
-				DE2EA9511EB33EAF00C76D7F /* Sources */,
-				DE2EA9521EB33EAF00C76D7F /* Frameworks */,
-				DE2EA9531EB33EAF00C76D7F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE2EA9571EB33EAF00C76D7F /* PBXTargetDependency */,
-			);
-			name = AlertControllerDemoUITests;
-			productName = AlertControllerDemoUITests;
-			productReference = DE2EA9551EB33EAF00C76D7F /* AlertControllerDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,16 +155,6 @@
 						DevelopmentTeam = ZF6TVZV5SQ;
 						ProvisioningStyle = Automatic;
 					};
-					DE2EA9491EB33EAF00C76D7F = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DE2EA9301EB33EAF00C76D7F;
-					};
-					DE2EA9541EB33EAF00C76D7F = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DE2EA9301EB33EAF00C76D7F;
-					};
 				};
 			};
 			buildConfigurationList = DE2EA92C1EB33EAF00C76D7F /* Build configuration list for PBXProject "AlertControllerDemo" */;
@@ -257,6 +162,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -266,8 +172,6 @@
 			projectRoot = "";
 			targets = (
 				DE2EA9301EB33EAF00C76D7F /* AlertControllerDemo */,
-				DE2EA9491EB33EAF00C76D7F /* AlertControllerDemoTests */,
-				DE2EA9541EB33EAF00C76D7F /* AlertControllerDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,21 +188,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE2EA9481EB33EAF00C76D7F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2EA9531EB33EAF00C76D7F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		547D122F86EFA88E93AB1FD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlertControllerDemo/Pods-AlertControllerDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CYAlertController/CYAlertController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYAlertController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlertControllerDemo/Pods-AlertControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC224A6F9DCCE026C655BC6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlertControllerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE2EA92D1EB33EAF00C76D7F /* Sources */ = {
@@ -309,40 +242,10 @@
 				DE2EA93C1EB33EAF00C76D7F /* ViewController.m in Sources */,
 				DE2EA9391EB33EAF00C76D7F /* AppDelegate.m in Sources */,
 				DE2EA9361EB33EAF00C76D7F /* main.m in Sources */,
-				DE513EE81F13442500BE4CDE /* CYAlertController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2EA9461EB33EAF00C76D7F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE2EA94F1EB33EAF00C76D7F /* AlertControllerDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2EA9511EB33EAF00C76D7F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE2EA95A1EB33EAF00C76D7F /* AlertControllerDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DE2EA94C1EB33EAF00C76D7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE2EA9301EB33EAF00C76D7F /* AlertControllerDemo */;
-			targetProxy = DE2EA94B1EB33EAF00C76D7F /* PBXContainerItemProxy */;
-		};
-		DE2EA9571EB33EAF00C76D7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE2EA9301EB33EAF00C76D7F /* AlertControllerDemo */;
-			targetProxy = DE2EA9561EB33EAF00C76D7F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE2EA93D1EB33EAF00C76D7F /* Main.storyboard */ = {
@@ -454,6 +357,7 @@
 		};
 		DE2EA95F1EB33EAF00C76D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4875CA32B5D36BE7654D746 /* Pods-AlertControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZF6TVZV5SQ;
@@ -467,6 +371,7 @@
 		};
 		DE2EA9601EB33EAF00C76D7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67C9FA6F060C547E669A6676 /* Pods-AlertControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZF6TVZV5SQ;
@@ -475,52 +380,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyyun.AlertControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		DE2EA9621EB33EAF00C76D7F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AlertControllerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyyun.AlertControllerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertControllerDemo.app/AlertControllerDemo";
-			};
-			name = Debug;
-		};
-		DE2EA9631EB33EAF00C76D7F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AlertControllerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyyun.AlertControllerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertControllerDemo.app/AlertControllerDemo";
-			};
-			name = Release;
-		};
-		DE2EA9651EB33EAF00C76D7F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AlertControllerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyyun.AlertControllerDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AlertControllerDemo;
-			};
-			name = Debug;
-		};
-		DE2EA9661EB33EAF00C76D7F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AlertControllerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyyun.AlertControllerDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AlertControllerDemo;
 			};
 			name = Release;
 		};
@@ -541,24 +400,6 @@
 			buildConfigurations = (
 				DE2EA95F1EB33EAF00C76D7F /* Debug */,
 				DE2EA9601EB33EAF00C76D7F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE2EA9611EB33EAF00C76D7F /* Build configuration list for PBXNativeTarget "AlertControllerDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE2EA9621EB33EAF00C76D7F /* Debug */,
-				DE2EA9631EB33EAF00C76D7F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE2EA9641EB33EAF00C76D7F /* Build configuration list for PBXNativeTarget "AlertControllerDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE2EA9651EB33EAF00C76D7F /* Debug */,
-				DE2EA9661EB33EAF00C76D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

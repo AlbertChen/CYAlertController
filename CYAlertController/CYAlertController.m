@@ -1,6 +1,6 @@
 //
 //  CYAlertController.m
-//  Demo
+//  CYAlertController
 //
 //  Created by Chen Yiliang on 3/1/16.
 //  Copyright © 2016 Chen Yiliang. All rights reserved.

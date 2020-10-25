@@ -1,0 +1,16 @@
+PODS:
+  - CYAlertController (0.0.1)
+
+DEPENDENCIES:
+  - CYAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  CYAlertController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CYAlertController: 222095ab91342243764024e364c6d16ec637a0cd
+
+PODFILE CHECKSUM: a84aab3b4f6746fb992635ee773a4e5fba000cd1
+
+COCOAPODS: 1.9.1

@@ -1,4 +1,9 @@
 # CYAlertController
+
+![](https://img.shields.io/cocoapods/v/CYAlertController.svg?style=flat)
+![](https://img.shields.io/cocoapods/p/CYAlertController.svg?style=flat)
+![](https://img.shields.io/badge/language-ObjectiveC-orange.svg)
+
 Alert Controller
 
 Alert like system

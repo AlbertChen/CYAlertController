@@ -1,6 +1,6 @@
 //
 //  DatePickerView.h
-//  yqdk-common-ios
+//  AlertControllerDemo
 //
 //  Created by Chen Yiliang on 5/10/16.
 //  Copyright © 2016 Chen Yiliang. All rights reserved.
