@@ -1,10 +1,19 @@
 # CYAlertController
 
-![](https://img.shields.io/cocoapods/v/CYAlertController.svg?style=flat)
-![](https://img.shields.io/cocoapods/p/CYAlertController.svg?style=flat)
-![](https://img.shields.io/badge/language-ObjectiveC-orange.svg)
-
 Alert Controller
+
+## CocoaPods
+
+```ruby
+platform :ios, '8.0'
+
+target 'SampleTarget' do
+  use_frameworks!
+  pod 'CYAlertController', :git => "https://github.com/AlbertChen/CYAlertController.git"
+end
+```
+
+## Screenshots
 
 Alert like system
 
